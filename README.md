@@ -18,8 +18,14 @@ Use TDD to create a `Candidate` class that responds to the following interaction
 pry(main)> require './lib/candidate'
 => true
 
-pry(main)> diana = Candidate.new({name: "Diana D", party: :democrat})at})
+pry(main)> diana = Candidate.new({name: "Diana D", party: :democrat})
 => #<Candidate:0x00007fd83736dbe0...>
+
+pry(main)> diana.name
+=> "Diana D"
+
+pry(main)> diana.party
+=> :democrat
 
 pry(main)> diana.votes
 => 0
