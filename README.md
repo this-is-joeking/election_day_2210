@@ -149,7 +149,7 @@ pry(main)> election.candidates
 
 pry(main)> 4.times {candidate1.vote_for!}
 
-pry(main)> 1.times {candidate2.vote_for!}}
+pry(main)> 1.times {candidate2.vote_for!}
 
 pry(main)> 10.times {candidate3.vote_for!}
 
@@ -194,7 +194,7 @@ pry(main)> candidate1 = race1.register_candidate!({name: "Diana D", party: :demo
 pry(main)> candidate2 = race1.register_candidate!({name: "Roberto R", party: :republican})
 => #<Candidate:0x00007fc74429cbc0...>
 
-pry(main)> 4.times {candidate1.vote_for!}}
+pry(main)> 4.times {candidate1.vote_for!}
 
 pry(main)> 1.times {candidate2.vote_for!}
 
