@@ -90,7 +90,7 @@ pry(main)> race.candidates
 
 Use TDD to create an `Election` class that responds to the following interaction pattern.
 
-The `vote_counts` should return a hash with each candidate's name as a key and their count of votes as the value.
+The `vote_counts` method should return a hash with each candidate's name as a key and their count of votes as the value.
 
 ```ruby
 pry(main)> require './lib/candidate'
