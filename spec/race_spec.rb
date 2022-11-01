@@ -20,4 +20,15 @@ describe Race do
 
     expect(race.candidates).to eq([])
   end
+
+  describe '#register_candidate!' do
+    it 'can add candidates to the race' do
+      race = Race.new("Canadian Emperor")
+      candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
+
+      expect(race.candidates).to eq([candidate1])
+      candidate2 = race.register_candidate!({name: "Roberto R", party: :republican})
+      expect(race.candidates).to eq([candidate1, candidate2])      
+    end
+  end
 end
