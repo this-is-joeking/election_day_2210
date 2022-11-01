@@ -41,4 +41,13 @@ describe Race do
       expect(race.open?).to be true
     end
   end
+
+  describe '#close!' do
+    it 'closes the race' do
+      race = Race.new("Canadian Emperor")
+
+      expect(race.close!).to eq false
+      expect(race.open?).to eq false
+    end
+  end
 end
