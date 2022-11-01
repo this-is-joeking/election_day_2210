@@ -1,5 +1,7 @@
 class Race
-
-  def initialize(arg)
+  attr_reader :office
+  
+  def initialize(office)
+    @office = office
   end
 end
