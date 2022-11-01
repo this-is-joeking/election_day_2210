@@ -33,4 +33,12 @@ describe Race do
       expect(race.candidates).to eq([candidate1, candidate2])
     end
   end
+
+  describe '#open?' do
+    it 'method returns a boolean indicating whether the race is open or not' do
+      race = Race.new("Canadian Emperor")
+
+      expect(race.open?).to be true
+    end
+  end
 end
