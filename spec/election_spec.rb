@@ -15,4 +15,10 @@ describe Election do
 
     expect(election.year).to eq('2022')
   end
+
+  it 'starts with an empty array of races' do
+    election = Election.new('2022')
+
+    expect(election.races).to eq([])
+  end
 end
