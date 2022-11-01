@@ -25,4 +25,17 @@ describe Candidate do
 
     expect(candidate.votes).to eq(0)
   end
+
+  describe '#vote_for!' do
+    it 'adds votes to the candidate' do
+      diana = Candidate.new({name: "Diana D", party: :democrat})
+      diana.vote_for!
+
+      expect(candidate.votes).to eq(1)
+      diana.vote_for!
+      diana.vote_for!
+
+      expect(candidate.votes).to eq(3)
+    end
+  end
 end
