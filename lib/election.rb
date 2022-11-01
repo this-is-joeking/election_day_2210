@@ -16,11 +16,7 @@ class Election
   end
 
   def vote_counts
-    count = {}
-    candidates.each do |candidate|
-      count[candidate.name] = candidate.votes
-    end
-    count
+    candidates.map {|candidate| [candidate.name, candidate.votes]}.to_h
   end
 
   def winners
