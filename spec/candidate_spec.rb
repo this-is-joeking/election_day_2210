@@ -19,4 +19,10 @@ describe Candidate do
 
     expect(candidate.party).to eq(:democrat)
   end
+
+  it 'starts with 0 votes' do
+    candidate = Candidate.new({name: "Diana D", party: :democrat})
+
+    expect(candidate.votes).to eq(0)
+  end
 end
