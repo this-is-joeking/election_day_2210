@@ -8,4 +8,8 @@ class Candidate
     @party = candidate_details[:party]
     @votes = 0
   end
+
+  def vote_for!
+    @votes+= 1
+  end
 end
