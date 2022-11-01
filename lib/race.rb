@@ -29,4 +29,13 @@ class Race
       @candidates.max_by {|candidate| candidate.votes}
     end
   end
+
+  def tie?
+    if open?
+      false
+    else
+      top2 = @candidates.max_by(2) {|candidate| candidate.votes}
+      top2[0].votes == top2[1].votes
+    end
+  end
 end
