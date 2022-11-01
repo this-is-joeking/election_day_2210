@@ -75,5 +75,16 @@ describe Race do
 
       expect(race.winner).to eq(candidate1)
     end
+
+    it 'returns any candidate with most votes if there is a tie' do
+      race = Race.new("Arizona Senator")
+      candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
+      candidate2 = race.register_candidate!({name: "Roberto R", party: :republican})
+      4.times {candidate1.vote_for!}
+      4.times {candidate2.vote_for!}
+      race.close!
+
+      expect(race.winner).to eq(candidate1 || candidate2)
+    end
   end
 end
