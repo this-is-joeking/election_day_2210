@@ -14,4 +14,10 @@ describe Race do
 
     expect(race.office).to eq("Canadian Emperor")
   end
+
+  it 'starts without any candidates' do
+    race = Race.new("Canadian Emperor")
+
+    expect(race.candidates).to eq([])
+  end
 end
