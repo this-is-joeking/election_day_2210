@@ -8,4 +8,10 @@ describe Race do
 
     expect(race).to be_a Race
   end
+
+  it 'can return the off being voted for' do
+    race = Race.new("Canadian Emperor")
+
+    expect(race.office).to eq("Canadian Emperor")
+  end
 end
