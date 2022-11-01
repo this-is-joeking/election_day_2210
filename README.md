@@ -176,9 +176,6 @@ The `tie?` method should return a boolean indicating if two or more candidates r
 Additionally, you should use TDD to implement a method for the `Election` class called `winners` that will return an array of the Candidate objects that represents the winner from each race. If the race is a tie or is still open, no winner should be returned for that race.
 
 ```ruby
-pry(main)> require './lib/candidate'
-=> true
-
 pry(main)> require './lib/race'
 => true
 
