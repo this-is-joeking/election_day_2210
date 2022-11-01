@@ -22,4 +22,9 @@ class Election
     end
     count
   end
+
+  def winners
+    open_races = @races.select {|race| !race.open? && !race.tie?}
+    open_races.map { |race| race.winner }
+  end
 end
