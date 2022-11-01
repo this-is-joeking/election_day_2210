@@ -13,4 +13,10 @@ describe Candidate do
 
     expect(candidate.name).to eq("Diana D")
   end
+
+  it 'returns the party' do
+    candidate = Candidate.new({name: "Diana D", party: :democrat})
+
+    expect(candidate.party).to eq(:democrat)
+  end
 end
