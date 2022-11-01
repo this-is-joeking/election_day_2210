@@ -25,11 +25,14 @@ describe Race do
     it 'can add candidates to the race' do
       race = Race.new("Canadian Emperor")
       candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
+
       expect(candidate1).to be_a Candidate
       expect(candidate1.name).to eq("Diana D")
       expect(candidate1.party).to eq(:democrat)
       expect(race.candidates).to eq([candidate1])
+
       candidate2 = race.register_candidate!({name: "Roberto R", party: :republican})
+
       expect(race.candidates).to eq([candidate1, candidate2])
     end
   end
@@ -48,6 +51,29 @@ describe Race do
 
       expect(race.close!).to eq false
       expect(race.open?).to eq false
+    end
+  end
+
+  describe '#winner' do
+    it 'returns false if race is open' do
+      race = Race.new("Arizona Senator")
+      candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
+      candidate2 = race.register_candidate!({name: "Roberto R", party: :republican})
+      4.times {candidate1.vote_for!}
+      1.times {candidate2.vote_for!}
+
+      expect(race.winner).to eq false
+    end
+
+    it 'returns the candidate with most votes if race is closed' do
+      race = Race.new("Arizona Senator")
+      candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
+      candidate2 = race.register_candidate!({name: "Roberto R", party: :republican})
+      4.times {candidate1.vote_for!}
+      1.times {candidate2.vote_for!}
+      race.close!
+
+      expect(race.winner).to eq(candidate1)
     end
   end
 end
